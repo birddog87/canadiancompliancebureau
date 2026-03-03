@@ -1,26 +1,129 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --navy-900: #0C1A2E;
+  --navy-800: #132440;
+  --navy-700: #1B3258;
+  --navy-600: #234170;
+  --navy-500: #2C5282;
+  --navy-400: #3B6FA0;
+  --navy-300: #6B9CCE;
+  --navy-200: #A3C4E4;
+  --navy-100: #D4E4F2;
+  --navy-50: #EDF3F9;
+  --red-700: #9B1C1C;
+  --red-600: #B91C1C;
+  --red-500: #DC2626;
+  --gold-400: #D97706;
+  --gold-300: #F59E0B;
+  --warm-50: #FAFAF8;
+  --warm-100: #F5F4F0;
+  --warm-200: #E8E6E0;
+  --warm-300: #D4D0C8;
+  --warm-400: #9E9A90;
+  --warm-500: #6B6860;
+  --warm-600: #4A4840;
+  --warm-700: #333028;
+  --warm-800: #1F1D18;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+  --color-navy-900: var(--navy-900);
+  --color-navy-800: var(--navy-800);
+  --color-navy-700: var(--navy-700);
+  --color-navy-600: var(--navy-600);
+  --color-navy-500: var(--navy-500);
+  --color-navy-400: var(--navy-400);
+  --color-navy-300: var(--navy-300);
+  --color-navy-200: var(--navy-200);
+  --color-navy-100: var(--navy-100);
+  --color-navy-50: var(--navy-50);
+  --color-red-700: var(--red-700);
+  --color-red-600: var(--red-600);
+  --color-red-500: var(--red-500);
+  --color-gold-400: var(--gold-400);
+  --color-gold-300: var(--gold-300);
+  --color-warm-50: var(--warm-50);
+  --color-warm-100: var(--warm-100);
+  --color-warm-200: var(--warm-200);
+  --color-warm-300: var(--warm-300);
+  --color-warm-400: var(--warm-400);
+  --color-warm-500: var(--warm-500);
+  --color-warm-600: var(--warm-600);
+  --color-warm-700: var(--warm-700);
+  --color-warm-800: var(--warm-800);
+  --font-sans: 'Libre Franklin', 'Helvetica Neue', Arial, sans-serif;
+  --font-serif: 'Source Serif 4', Georgia, 'Times New Roman', serif;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-sans);
+  color: var(--warm-700);
+  background: #ffffff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Grid pattern for hero/cta backgrounds */
+.grid-pattern {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h60v60H0z' fill='none'/%3E%3Cpath d='M30 0v60M0 30h60' stroke='%23ffffff' stroke-width='0.3' opacity='0.04'/%3E%3C/svg%3E");
+}
+
+.grid-pattern-subtle {
+  background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0h60v60H0z' fill='none'/%3E%3Cpath d='M30 0v60M0 30h60' stroke='%23ffffff' stroke-width='0.3' opacity='0.03'/%3E%3C/svg%3E");
+}
+
+.grid-pattern-dark {
+  background-image: url("data:image/svg+xml,%3Csvg width='40' height='40' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M20 0v40M0 20h40' stroke='%23ffffff' stroke-width='0.3' opacity='0.06'/%3E%3C/svg%3E");
+}
+
+/* Drop cap for about section */
+.drop-cap::first-letter {
+  font-family: var(--font-serif);
+  font-size: 3.25rem;
+  font-weight: 700;
+  float: left;
+  color: var(--navy-700);
+  line-height: 0.85;
+  margin-right: 0.5rem;
+  margin-top: 0.25rem;
+}
+
+/* Pulse animation for notice dot */
+@keyframes pulse-dot {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+.animate-pulse-dot {
+  animation: pulse-dot 2s ease-in-out infinite;
+}
+
+/* Form select arrow */
+select {
+  appearance: none;
+  background-image: url("data:image/svg+xml,%3Csvg width='12' height='8' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%236B6860' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 14px center;
+  padding-right: 36px !important;
+}
+
+/* Process steps counter */
+.process-steps {
+  counter-reset: step;
+}
+.process-step {
+  counter-increment: step;
+}
+.process-step::before {
+  content: counter(step, decimal-leading-zero);
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--navy-200);
+  min-width: 2.5rem;
+  line-height: 1.2;
 }
