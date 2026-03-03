@@ -20,19 +20,45 @@ const complaintTypes = [
   { value: "other", label: "Other" },
 ];
 
+const FORM_URL = "https://formsubmit.co/ajax/nicholas.hammond0@gmail.com";
+
 export function ComplaintForm() {
   const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
   const [refNumber, setRefNumber] = useState("");
+  const [error, setError] = useState("");
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setSubmitting(true);
+    setError("");
+
+    const form = e.target as HTMLFormElement;
+    const formData = new FormData(form);
     const ref = `CCB-${new Date().getFullYear()}-${Math.floor(Math.random() * 9000) + 1000}`;
-    setRefNumber(ref);
-    setSubmitted(true);
-    setTimeout(() => {
-      setSubmitted(false);
-      (e.target as HTMLFormElement).reset();
-    }, 5000);
+    formData.append("_reference", ref);
+
+    try {
+      const res = await fetch(FORM_URL, {
+        method: "POST",
+        body: formData,
+        headers: { Accept: "application/json" },
+      });
+      if (res.ok) {
+        setRefNumber(ref);
+        setSubmitted(true);
+        setTimeout(() => {
+          setSubmitted(false);
+          form.reset();
+        }, 5000);
+      } else {
+        setError("Submission failed. Please email investigations@canadiancompliancebureau.ca directly.");
+      }
+    } catch {
+      setError("Network error. Please email investigations@canadiancompliancebureau.ca directly.");
+    } finally {
+      setSubmitting(false);
+    }
   };
 
   return (
@@ -127,6 +153,7 @@ export function ComplaintForm() {
                   </label>
                   <input
                     type="text"
+                    name="name"
                     required
                     placeholder="Your full name"
                     className="text-sm text-warm-700 px-3.5 py-2.5 border border-warm-200 rounded-md bg-white outline-none transition-all focus:border-navy-400 focus:ring-[3px] focus:ring-navy-400/10"
@@ -138,6 +165,7 @@ export function ComplaintForm() {
                   </label>
                   <input
                     type="email"
+                    name="email"
                     required
                     placeholder="you@example.com"
                     className="text-sm text-warm-700 px-3.5 py-2.5 border border-warm-200 rounded-md bg-white outline-none transition-all focus:border-navy-400 focus:ring-[3px] focus:ring-navy-400/10"
@@ -152,6 +180,7 @@ export function ComplaintForm() {
                   </label>
                   <input
                     type="tel"
+                    name="phone"
                     placeholder="(xxx) xxx-xxxx"
                     className="text-sm text-warm-700 px-3.5 py-2.5 border border-warm-200 rounded-md bg-white outline-none transition-all focus:border-navy-400 focus:ring-[3px] focus:ring-navy-400/10"
                   />
@@ -161,6 +190,7 @@ export function ComplaintForm() {
                     Province <span className="text-red-500">*</span>
                   </label>
                   <select
+                    name="province"
                     required
                     defaultValue="Ontario"
                     className="text-sm text-warm-700 px-3.5 py-2.5 border border-warm-200 rounded-md bg-white outline-none transition-all focus:border-navy-400 focus:ring-[3px] focus:ring-navy-400/10"
@@ -182,6 +212,7 @@ export function ComplaintForm() {
                 </label>
                 <input
                   type="text"
+                  name="auction_house"
                   required
                   placeholder="Name of the auction house or platform"
                   className="text-sm text-warm-700 px-3.5 py-2.5 border border-warm-200 rounded-md bg-white outline-none transition-all focus:border-navy-400 focus:ring-[3px] focus:ring-navy-400/10"
@@ -194,6 +225,7 @@ export function ComplaintForm() {
                 </label>
                 <input
                   type="url"
+                  name="platform_url"
                   placeholder="https://www.example.com"
                   className="text-sm text-warm-700 px-3.5 py-2.5 border border-warm-200 rounded-md bg-white outline-none transition-all focus:border-navy-400 focus:ring-[3px] focus:ring-navy-400/10"
                 />
@@ -205,6 +237,7 @@ export function ComplaintForm() {
                   <span className="text-red-500">*</span>
                 </label>
                 <select
+                  name="complaint_type"
                   required
                   className="text-sm text-warm-700 px-3.5 py-2.5 border border-warm-200 rounded-md bg-white outline-none transition-all focus:border-navy-400 focus:ring-[3px] focus:ring-navy-400/10"
                 >
@@ -223,6 +256,7 @@ export function ComplaintForm() {
                   <span className="text-red-500">*</span>
                 </label>
                 <textarea
+                  name="description"
                   required
                   rows={4}
                   placeholder="Please provide a detailed description of the issue, including dates, item descriptions, and any other relevant information."
@@ -235,6 +269,7 @@ export function ComplaintForm() {
                   Supporting Evidence
                 </label>
                 <textarea
+                  name="evidence"
                   rows={3}
                   placeholder="Links to relevant auction listings, marketplace profiles, screenshots, or other evidence. You may also email evidence directly to investigations@canadiancompliancebureau.ca"
                   className="text-sm text-warm-700 px-3.5 py-2.5 border border-warm-200 rounded-md bg-white outline-none transition-all resize-y focus:border-navy-400 focus:ring-[3px] focus:ring-navy-400/10"
@@ -248,13 +283,19 @@ export function ComplaintForm() {
                 identity without your express consent. Ref: CCB-CP-2026
               </p>
 
+              {error && (
+                <p className="text-sm text-red-600 mt-2">{error}</p>
+              )}
+
               <button
                 type="submit"
-                disabled={submitted}
+                disabled={submitted || submitting}
                 className={`w-full flex items-center justify-center gap-2 text-[15px] font-semibold text-white py-3.5 px-7 rounded-md transition-all mt-5 ${
                   submitted
                     ? "bg-green-800 cursor-default"
-                    : "bg-red-600 hover:bg-red-700 shadow-[0_1px_3px_rgba(0,0,0,0.2)] hover:-translate-y-px hover:shadow-[0_4px_12px_rgba(0,0,0,0.25)]"
+                    : submitting
+                      ? "bg-red-400 cursor-wait"
+                      : "bg-red-600 hover:bg-red-700 shadow-[0_1px_3px_rgba(0,0,0,0.2)] hover:-translate-y-px hover:shadow-[0_4px_12px_rgba(0,0,0,0.25)]"
                 }`}
               >
                 {submitted ? (
@@ -262,6 +303,8 @@ export function ComplaintForm() {
                     <Check className="w-4 h-4" />
                     Complaint Submitted &mdash; Reference: {refNumber}
                   </>
+                ) : submitting ? (
+                  "Submitting..."
                 ) : (
                   <>
                     <Send className="w-4 h-4" />

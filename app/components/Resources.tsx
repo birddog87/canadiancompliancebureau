@@ -6,18 +6,21 @@ const resources = [
     tag: "Guidance",
     title: "Understanding Employee Self-Dealing in Online Auctions",
     desc: "A comprehensive overview of how auction house employees exploit insider access to divert inventory and manipulate bidding outcomes.",
+    href: "/resources/employee-self-dealing",
   },
   {
     icon: Shield,
     tag: "Consumer Rights",
     title: "Your Rights as an Online Auction Bidder in Canada",
     desc: "Know your protections under provincial consumer protection legislation and platform terms of service when participating in online auctions.",
+    href: "/resources/bidder-rights",
   },
   {
     icon: Search,
     tag: "Report",
     title: "2025-2026 Marketplace Compliance Report: GTA Region",
     desc: "Annual summary of compliance monitoring activity, investigation outcomes, and emerging trends in auction marketplace misconduct.",
+    href: "/resources/compliance-report-2025",
   },
 ];
 
@@ -60,7 +63,7 @@ export function Resources() {
                   {r.desc}
                 </p>
                 <a
-                  href="#"
+                  href={r.href}
                   className="text-[13px] font-semibold text-navy-600 no-underline inline-flex items-center gap-1.5 hover:text-navy-800 transition-colors"
                 >
                   Read Publication
