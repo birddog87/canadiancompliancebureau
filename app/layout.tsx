@@ -27,6 +27,9 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://canadiancompliancebureau.com",
   },
+  verification: {
+    google: "z2ponG3Gvq00QWBikJ__EpkfokpiaLu1li1FFPw9vRs",
+  },
   other: {
     "theme-color": "#132440",
   },
