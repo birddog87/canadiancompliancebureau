@@ -6,6 +6,7 @@ import { Services } from "./components/Services";
 import { ComplaintForm } from "./components/ComplaintForm";
 import { Resources } from "./components/Resources";
 import { FaqSection } from "./components/FaqSection";
+import { EmailCapture } from "./components/EmailCapture";
 import { CtaBanner } from "./components/CtaBanner";
 import { Footer } from "./components/Footer";
 
@@ -126,6 +127,7 @@ export default function Home() {
       <ComplaintForm />
       <Resources />
       <FaqSection />
+      <EmailCapture />
       <CtaBanner />
       <Footer />
     </>

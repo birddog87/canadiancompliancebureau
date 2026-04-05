@@ -4,6 +4,7 @@ const orgLinks = [
   { href: "#about", label: "About the CCB" },
   { href: "#services", label: "Our Work" },
   { href: "#resources", label: "Publications" },
+  { href: "/blog", label: "News & Analysis" },
 ];
 
 const consumerLinks = [
@@ -94,10 +95,10 @@ export function Footer() {
             &copy; 2024-2026 Canadian Compliance Bureau. All rights reserved.
           </span>
           <div className="flex gap-5">
-            <a href="#" className="text-navy-500 no-underline hover:text-navy-300 transition-colors">
+            <a href="/privacy" className="text-navy-500 no-underline hover:text-navy-300 transition-colors">
               Privacy Policy
             </a>
-            <a href="#" className="text-navy-500 no-underline hover:text-navy-300 transition-colors">
+            <a href="/disclaimer" className="text-navy-500 no-underline hover:text-navy-300 transition-colors">
               Disclaimer
             </a>
           </div>
