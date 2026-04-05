@@ -3,15 +3,90 @@ import { Footer } from "../../components/Footer";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title:
-    "Understanding Employee Self-Dealing in Online Auctions | Canadian Compliance Bureau",
+  title: "Understanding Employee Self-Dealing in Online Auctions",
   description:
     "A comprehensive guide to identifying and documenting employee self-dealing in online auction houses, including common schemes, red flags, and enforcement options.",
+  openGraph: {
+    type: "article",
+    title: "Understanding Employee Self-Dealing in Online Auctions",
+    description:
+      "A comprehensive guide to identifying and documenting employee self-dealing in online auction houses, including common schemes, red flags, and enforcement options.",
+    url: "https://canadiancompliancebureau.com/resources/employee-self-dealing",
+    publishedTime: "2025-03-14T00:00:00Z",
+    authors: ["CCB Research Division"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Understanding Employee Self-Dealing in Online Auctions",
+    description:
+      "A comprehensive guide to identifying and documenting employee self-dealing in online auction houses.",
+  },
+  alternates: {
+    canonical:
+      "https://canadiancompliancebureau.com/resources/employee-self-dealing",
+  },
 };
 
 export default function EmployeeSelfDealing() {
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: "Understanding Employee Self-Dealing in Online Auctions",
+    datePublished: "2025-03-14",
+    author: {
+      "@type": "Organization",
+      name: "CCB Research Division",
+      url: "https://canadiancompliancebureau.com",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Canadian Compliance Bureau",
+      url: "https://canadiancompliancebureau.com",
+    },
+    description:
+      "A comprehensive guide to identifying and documenting employee self-dealing in online auction houses, including common schemes, red flags, and enforcement options.",
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id":
+        "https://canadiancompliancebureau.com/resources/employee-self-dealing",
+    },
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://canadiancompliancebureau.com",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Resources",
+        item: "https://canadiancompliancebureau.com/#resources",
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: "Employee Self-Dealing",
+        item: "https://canadiancompliancebureau.com/resources/employee-self-dealing",
+      },
+    ],
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <Header />
       <main className="bg-white min-h-screen">
         {/* Breadcrumb */}

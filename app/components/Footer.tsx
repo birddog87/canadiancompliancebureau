@@ -4,15 +4,12 @@ const orgLinks = [
   { href: "#about", label: "About the CCB" },
   { href: "#services", label: "Our Work" },
   { href: "#resources", label: "Publications" },
-  { href: "#", label: "Annual Report" },
-  { href: "#", label: "Media Inquiries" },
 ];
 
 const consumerLinks = [
   { href: "#complaint", label: "File a Complaint" },
-  { href: "#resources", label: "Know Your Rights" },
-  { href: "#", label: "Frequently Asked Questions" },
-  { href: "#", label: "Complaint Status" },
+  { href: "/resources/bidder-rights", label: "Know Your Rights" },
+  { href: "#faq", label: "Frequently Asked Questions" },
 ];
 
 export function Footer() {
@@ -82,7 +79,7 @@ export function Footer() {
               compliancebureau.ca
             </a>
             <a
-              href="#"
+              href="mailto:media@canadiancompliancebureau.ca"
               className="block text-[13.5px] text-navy-400 no-underline py-1.5 hover:text-white transition-colors"
             >
               media@canadian
@@ -99,12 +96,6 @@ export function Footer() {
           <div className="flex gap-5">
             <a href="#" className="text-navy-500 no-underline hover:text-navy-300 transition-colors">
               Privacy Policy
-            </a>
-            <a href="#" className="text-navy-500 no-underline hover:text-navy-300 transition-colors">
-              Terms of Use
-            </a>
-            <a href="#" className="text-navy-500 no-underline hover:text-navy-300 transition-colors">
-              Accessibility
             </a>
             <a href="#" className="text-navy-500 no-underline hover:text-navy-300 transition-colors">
               Disclaimer

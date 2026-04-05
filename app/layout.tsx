@@ -2,9 +2,34 @@ import type { Metadata } from "next";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "Canadian Compliance Bureau | Protecting Marketplace Integrity",
+  metadataBase: new URL("https://canadiancompliancebureau.com"),
+  title: {
+    default: "Canadian Compliance Bureau | Protecting Marketplace Integrity",
+    template: "%s | Canadian Compliance Bureau",
+  },
   description:
     "The Canadian Compliance Bureau monitors auction platforms and marketplaces to ensure fair practices, protect consumers, and uphold industry standards across Canada.",
+  openGraph: {
+    type: "website",
+    locale: "en_CA",
+    url: "https://canadiancompliancebureau.com",
+    siteName: "Canadian Compliance Bureau",
+    title: "Canadian Compliance Bureau | Protecting Marketplace Integrity",
+    description:
+      "Independent compliance monitoring for Canadian online auction platforms. Protecting bidders, consignors, and marketplace integrity.",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Canadian Compliance Bureau | Protecting Marketplace Integrity",
+    description:
+      "Independent compliance monitoring for Canadian online auction platforms. Protecting bidders, consignors, and marketplace integrity.",
+  },
+  alternates: {
+    canonical: "https://canadiancompliancebureau.com",
+  },
+  other: {
+    "theme-color": "#132440",
+  },
 };
 
 export default function RootLayout({
@@ -13,7 +38,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en-CA">
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link

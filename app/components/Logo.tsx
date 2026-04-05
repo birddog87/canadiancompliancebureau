@@ -87,7 +87,7 @@ export function LogoText({ light = false }: { light?: boolean }) {
 
 export function Logo({ light = false }: { light?: boolean }) {
   return (
-    <a href="#" className="flex items-center gap-3.5 no-underline">
+    <a href="/" className="flex items-center gap-3.5 no-underline">
       <LogoMark />
       <LogoText light={light} />
     </a>

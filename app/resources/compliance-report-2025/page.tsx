@@ -3,15 +3,90 @@ import { Footer } from "../../components/Footer";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title:
-    "2025-2026 Marketplace Compliance Report: GTA Region | Canadian Compliance Bureau",
+  title: "2025-2026 Marketplace Compliance Report: GTA Region",
   description:
     "Annual compliance monitoring report covering online auction and marketplace practices in the Greater Toronto Area, including key findings on employee self-dealing, shill bidding, and inventory diversion.",
+  openGraph: {
+    type: "article",
+    title: "2025-2026 Marketplace Compliance Report: GTA Region",
+    description:
+      "Annual compliance monitoring report covering online auction and marketplace practices in the Greater Toronto Area, including key findings on employee self-dealing, shill bidding, and inventory diversion.",
+    url: "https://canadiancompliancebureau.com/resources/compliance-report-2025",
+    publishedTime: "2026-02-01T00:00:00Z",
+    authors: ["CCB Research Division"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "2025-2026 Marketplace Compliance Report: GTA Region",
+    description:
+      "Annual compliance report on GTA online auction practices — employee self-dealing, shill bidding, and inventory diversion findings.",
+  },
+  alternates: {
+    canonical:
+      "https://canadiancompliancebureau.com/resources/compliance-report-2025",
+  },
 };
 
 export default function ComplianceReport2025() {
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: "2025-2026 Marketplace Compliance Report: GTA Region",
+    datePublished: "2026-02-01",
+    author: {
+      "@type": "Organization",
+      name: "CCB Research Division",
+      url: "https://canadiancompliancebureau.com",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Canadian Compliance Bureau",
+      url: "https://canadiancompliancebureau.com",
+    },
+    description:
+      "Annual compliance monitoring report covering online auction and marketplace practices in the Greater Toronto Area, including key findings on employee self-dealing, shill bidding, and inventory diversion.",
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id":
+        "https://canadiancompliancebureau.com/resources/compliance-report-2025",
+    },
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://canadiancompliancebureau.com",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Resources",
+        item: "https://canadiancompliancebureau.com/#resources",
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: "Compliance Report 2025-2026",
+        item: "https://canadiancompliancebureau.com/resources/compliance-report-2025",
+      },
+    ],
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <Header />
       <main className="bg-white min-h-screen">
         {/* Breadcrumb */}

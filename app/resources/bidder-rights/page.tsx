@@ -3,15 +3,90 @@ import { Footer } from "../../components/Footer";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title:
-    "Your Rights as an Online Auction Bidder in Canada | Canadian Compliance Bureau",
+  title: "Your Rights as an Online Auction Bidder in Canada",
   description:
     "A comprehensive guide to the legal protections, complaint procedures, and enforcement options available to online auction bidders under Canadian federal and provincial law.",
+  openGraph: {
+    type: "article",
+    title: "Your Rights as an Online Auction Bidder in Canada",
+    description:
+      "A comprehensive guide to the legal protections, complaint procedures, and enforcement options available to online auction bidders under Canadian federal and provincial law.",
+    url: "https://canadiancompliancebureau.com/resources/bidder-rights",
+    publishedTime: "2025-01-22T00:00:00Z",
+    authors: ["CCB Research Division"],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Your Rights as an Online Auction Bidder in Canada",
+    description:
+      "Legal protections, complaint procedures, and enforcement options for online auction bidders in Canada.",
+  },
+  alternates: {
+    canonical:
+      "https://canadiancompliancebureau.com/resources/bidder-rights",
+  },
 };
 
 export default function BidderRights() {
+  const articleSchema = {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: "Your Rights as an Online Auction Bidder in Canada",
+    datePublished: "2025-01-22",
+    author: {
+      "@type": "Organization",
+      name: "CCB Research Division",
+      url: "https://canadiancompliancebureau.com",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "Canadian Compliance Bureau",
+      url: "https://canadiancompliancebureau.com",
+    },
+    description:
+      "A comprehensive guide to the legal protections, complaint procedures, and enforcement options available to online auction bidders under Canadian federal and provincial law.",
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id":
+        "https://canadiancompliancebureau.com/resources/bidder-rights",
+    },
+  };
+
+  const breadcrumbSchema = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://canadiancompliancebureau.com",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Resources",
+        item: "https://canadiancompliancebureau.com/#resources",
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: "Bidder Rights",
+        item: "https://canadiancompliancebureau.com/resources/bidder-rights",
+      },
+    ],
+  };
+
   return (
     <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+      />
       <Header />
       <main className="bg-white min-h-screen">
         {/* Breadcrumb */}
