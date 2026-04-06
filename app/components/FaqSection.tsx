@@ -73,7 +73,7 @@ export function FaqSection() {
                   id={`faq-answer-${i}`}
                   role="region"
                   aria-labelledby={`faq-question-${i}`}
-                  className="px-5 pb-4 text-warm-600 text-[14.5px] leading-relaxed border-t border-warm-100 pt-3"
+                  className="px-5 pb-4 text-warm-600 text-sm leading-relaxed border-t border-warm-100 pt-3"
                 >
                   {faq.answer}
                 </div>

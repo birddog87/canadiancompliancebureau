@@ -55,7 +55,7 @@ export function Resources() {
               <h3 className="font-serif text-[17px] font-semibold text-navy-800 mb-2.5 leading-snug group-hover:text-navy-600 transition-colors">
                 {r.title}
               </h3>
-              <p className="text-[13.5px] text-warm-500 leading-relaxed mb-5 flex-1">
+              <p className="text-[13px] text-warm-500 leading-relaxed mb-5 flex-1">
                 {r.desc}
               </p>
               <span className="text-[13px] font-semibold text-navy-600 inline-flex items-center gap-1.5 group-hover:text-navy-800 transition-colors">

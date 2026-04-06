@@ -35,7 +35,7 @@ export function About() {
 
         <div className="grid lg:grid-cols-2 gap-15 mt-8 items-start">
           <div>
-            <p className="drop-cap text-[15.5px] text-warm-600 leading-[1.75]">
+            <p className="drop-cap text-[15px] text-warm-600 leading-[1.75]">
               The Canadian Compliance Bureau monitors online auction platforms
               across Canada, investigates complaints of price manipulation,
               shill bidding, and employee self-dealing, and pursues corrective

@@ -1,7 +1,7 @@
 export function NoticeBar() {
   return (
     <div className="bg-navy-50 border-b border-navy-100 py-3.5">
-      <div className="max-w-[1200px] mx-auto px-6 flex items-center gap-3 text-[13.5px] text-navy-700">
+      <div className="max-w-[1200px] mx-auto px-6 flex items-center gap-3 text-[13px] text-navy-700">
         <span className="w-2 h-2 bg-red-500 rounded-full flex-shrink-0 animate-pulse-dot" />
         <span>
           <strong className="font-semibold text-navy-800">

@@ -50,10 +50,10 @@ export function Services() {
                   <s.icon className="w-[22px] h-[22px]" />
                 </div>
                 <div>
-                  <h3 className="font-serif text-[19px] font-semibold text-navy-800 mb-2 leading-snug">
+                  <h3 className="font-serif text-lg font-semibold text-navy-800 mb-2 leading-snug">
                     {s.title}
                   </h3>
-                  <p className="text-[14px] text-warm-500 leading-relaxed">
+                  <p className="text-sm text-warm-500 leading-relaxed">
                     {s.desc}
                   </p>
                 </div>

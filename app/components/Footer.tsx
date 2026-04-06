@@ -22,7 +22,7 @@ export function Footer() {
             <div className="mb-1">
               <LogoText light />
             </div>
-            <p className="text-[13.5px] leading-relaxed text-navy-400 mt-4 max-w-[320px]">
+            <p className="text-[13px] leading-relaxed text-navy-400 mt-4 max-w-[320px]">
               An independent compliance and consumer advocacy organization
               monitoring online auction platforms and marketplaces across Canada.
               Protecting bidders, consignors, and the integrity of fair commerce.
@@ -37,7 +37,7 @@ export function Footer() {
               <a
                 key={l.label}
                 href={l.href}
-                className="block text-[13.5px] text-navy-400 no-underline py-1.5 hover:text-white transition-colors"
+                className="block text-[13px] text-navy-400 no-underline py-1.5 hover:text-white transition-colors"
               >
                 {l.label}
               </a>
@@ -52,7 +52,7 @@ export function Footer() {
               <a
                 key={l.label}
                 href={l.href}
-                className="block text-[13.5px] text-navy-400 no-underline py-1.5 hover:text-white transition-colors"
+                className="block text-[13px] text-navy-400 no-underline py-1.5 hover:text-white transition-colors"
               >
                 {l.label}
               </a>
@@ -65,7 +65,7 @@ export function Footer() {
             </h4>
             <a
               href="mailto:investigations@canadiancompliancebureau.ca"
-              className="block text-[13.5px] text-navy-400 no-underline py-1.5 hover:text-white transition-colors"
+              className="block text-[13px] text-navy-400 no-underline py-1.5 hover:text-white transition-colors"
             >
               investigations@canadian
               <br />
@@ -73,7 +73,7 @@ export function Footer() {
             </a>
             <a
               href="mailto:director@canadiancompliancebureau.ca"
-              className="block text-[13.5px] text-navy-400 no-underline py-1.5 hover:text-white transition-colors"
+              className="block text-[13px] text-navy-400 no-underline py-1.5 hover:text-white transition-colors"
             >
               director@canadian
               <br />
@@ -81,7 +81,7 @@ export function Footer() {
             </a>
             <a
               href="mailto:media@canadiancompliancebureau.ca"
-              className="block text-[13.5px] text-navy-400 no-underline py-1.5 hover:text-white transition-colors"
+              className="block text-[13px] text-navy-400 no-underline py-1.5 hover:text-white transition-colors"
             >
               media@canadian
               <br />

@@ -145,7 +145,7 @@ export function ComplaintForm() {
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="flex flex-col gap-1.5">
-                  <label htmlFor="complaint-name" className="text-[12.5px] font-semibold text-warm-600 tracking-wide">
+                  <label htmlFor="complaint-name" className="text-xs font-semibold text-warm-600 tracking-wide">
                     Full Name <span className="text-red-500">*</span>
                   </label>
                   <input
@@ -158,7 +158,7 @@ export function ComplaintForm() {
                   />
                 </div>
                 <div className="flex flex-col gap-1.5">
-                  <label htmlFor="complaint-email" className="text-[12.5px] font-semibold text-warm-600 tracking-wide">
+                  <label htmlFor="complaint-email" className="text-xs font-semibold text-warm-600 tracking-wide">
                     Email Address <span className="text-red-500">*</span>
                   </label>
                   <input
@@ -174,7 +174,7 @@ export function ComplaintForm() {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="flex flex-col gap-1.5">
-                  <label htmlFor="complaint-phone" className="text-[12.5px] font-semibold text-warm-600 tracking-wide">
+                  <label htmlFor="complaint-phone" className="text-xs font-semibold text-warm-600 tracking-wide">
                     Phone Number
                   </label>
                   <input
@@ -186,7 +186,7 @@ export function ComplaintForm() {
                   />
                 </div>
                 <div className="flex flex-col gap-1.5">
-                  <label htmlFor="complaint-province" className="text-[12.5px] font-semibold text-warm-600 tracking-wide">
+                  <label htmlFor="complaint-province" className="text-xs font-semibold text-warm-600 tracking-wide">
                     Province <span className="text-red-500">*</span>
                   </label>
                   <select
@@ -207,7 +207,7 @@ export function ComplaintForm() {
               </div>
 
               <div className="flex flex-col gap-1.5">
-                <label htmlFor="complaint-auction-house" className="text-[12.5px] font-semibold text-warm-600 tracking-wide">
+                <label htmlFor="complaint-auction-house" className="text-xs font-semibold text-warm-600 tracking-wide">
                   Auction House / Platform Name{" "}
                   <span className="text-red-500">*</span>
                 </label>
@@ -222,7 +222,7 @@ export function ComplaintForm() {
               </div>
 
               <div className="flex flex-col gap-1.5">
-                <label htmlFor="complaint-url" className="text-[12.5px] font-semibold text-warm-600 tracking-wide">
+                <label htmlFor="complaint-url" className="text-xs font-semibold text-warm-600 tracking-wide">
                   Platform URL
                 </label>
                 <input
@@ -235,7 +235,7 @@ export function ComplaintForm() {
               </div>
 
               <div className="flex flex-col gap-1.5">
-                <label htmlFor="complaint-type" className="text-[12.5px] font-semibold text-warm-600 tracking-wide">
+                <label htmlFor="complaint-type" className="text-xs font-semibold text-warm-600 tracking-wide">
                   Nature of Complaint{" "}
                   <span className="text-red-500">*</span>
                 </label>
@@ -255,7 +255,7 @@ export function ComplaintForm() {
               </div>
 
               <div className="flex flex-col gap-1.5">
-                <label htmlFor="complaint-description" className="text-[12.5px] font-semibold text-warm-600 tracking-wide">
+                <label htmlFor="complaint-description" className="text-xs font-semibold text-warm-600 tracking-wide">
                   Description of Complaint{" "}
                   <span className="text-red-500">*</span>
                 </label>
@@ -270,7 +270,7 @@ export function ComplaintForm() {
               </div>
 
               <div className="flex flex-col gap-1.5">
-                <label htmlFor="complaint-evidence" className="text-[12.5px] font-semibold text-warm-600 tracking-wide">
+                <label htmlFor="complaint-evidence" className="text-xs font-semibold text-warm-600 tracking-wide">
                   Supporting Evidence
                 </label>
                 <textarea
@@ -282,7 +282,7 @@ export function ComplaintForm() {
                 />
               </div>
 
-              <p className="text-[11.5px] text-warm-400 leading-normal pt-4 mt-4 border-t border-warm-200">
+              <p className="text-xs text-warm-400 leading-normal pt-4 mt-4 border-t border-warm-200">
                 By submitting this form, you confirm that the information
                 provided is accurate to the best of your knowledge. The CCB
                 treats all submissions as confidential and will not disclose your
