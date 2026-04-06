@@ -7,7 +7,6 @@ import { ComplaintForm } from "./components/ComplaintForm";
 import { Resources } from "./components/Resources";
 import { FaqSection } from "./components/FaqSection";
 import { EmailCapture } from "./components/EmailCapture";
-import { CtaBanner } from "./components/CtaBanner";
 import { Footer } from "./components/Footer";
 
 export default function Home() {
@@ -110,7 +109,6 @@ export default function Home() {
       <Resources />
       <FaqSection />
       <EmailCapture />
-      <CtaBanner />
       <Footer />
       <script
         type="application/ld+json"

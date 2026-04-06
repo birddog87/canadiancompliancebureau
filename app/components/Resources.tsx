@@ -31,15 +31,12 @@ export function Resources() {
       id="resources"
     >
       <div className="max-w-[1200px] mx-auto px-6">
-        <p className="text-[11px] font-semibold uppercase tracking-widest text-navy-500 mb-3">
-          Resources
-        </p>
-        <h2 className="font-serif text-[34px] font-bold text-navy-900 leading-tight tracking-tight mb-4">
+        <h2 className="font-serif text-[34px] font-bold text-navy-900 leading-tight tracking-tight mb-3">
           Publications &amp; Guidance
         </h2>
         <p className="text-base text-warm-500 leading-relaxed max-w-[600px] mb-12">
-          Educational materials and investigation summaries to help consumers and
-          industry participants understand their rights and obligations.
+          Guides and reports to help consumers understand their rights
+          and hold auction operators accountable.
         </p>
 
         <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-6">

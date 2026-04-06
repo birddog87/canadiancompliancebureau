@@ -27,41 +27,22 @@ export function About() {
   return (
     <section className="py-20 bg-white border-b border-warm-200" id="about">
       <div className="max-w-[1200px] mx-auto px-6">
-        <p className="text-[11px] font-semibold uppercase tracking-widest text-navy-500 mb-3">
-          About the CCB
-        </p>
         <h2 className="font-serif text-[34px] font-bold text-navy-900 leading-tight tracking-tight mb-4">
           Ensuring Fair Auction Practices
           <br />
           for Canadian Consumers
         </h2>
-        <p className="text-base text-warm-500 leading-relaxed max-w-[600px]">
-          An independent compliance and consumer advocacy organization dedicated
-          to marketplace transparency and accountability.
-        </p>
 
-        <div className="grid lg:grid-cols-2 gap-15 mt-12 items-start">
-          <div className="space-y-4.5">
+        <div className="grid lg:grid-cols-2 gap-15 mt-8 items-start">
+          <div>
             <p className="drop-cap text-[15.5px] text-warm-600 leading-[1.75]">
-              The Canadian Compliance Bureau was established to address a growing
-              gap in oversight of online auction platforms and consumer
-              marketplaces operating in Canada. As online auctions have expanded
-              rapidly, so too have instances of price manipulation, employee
-              self-dealing, shill bidding, and other practices that undermine
-              fair commerce and erode consumer trust.
-            </p>
-            <p className="text-[15.5px] text-warm-600 leading-[1.75]">
-              Our mandate is to monitor auction platforms, investigate complaints
-              from consumers and market participants, document patterns of
-              non-compliance with platform terms of service and applicable
-              regulations, and pursue corrective action through direct
-              engagement, regulatory referral, and public reporting.
-            </p>
-            <p className="text-[15.5px] text-warm-600 leading-[1.75]">
-              We work closely with platform operators, provincial consumer
-              protection agencies, and the Competition Bureau of Canada to ensure
-              that auction marketplaces operate with the integrity that Canadian
-              consumers deserve.
+              The Canadian Compliance Bureau monitors online auction platforms
+              across Canada, investigates complaints of price manipulation,
+              shill bidding, and employee self-dealing, and pursues corrective
+              action through direct engagement with operators, regulatory
+              referral, and public reporting. We work with provincial consumer
+              protection agencies and the Competition Bureau of Canada to hold
+              auction marketplaces to the standards Canadian consumers deserve.
             </p>
           </div>
 

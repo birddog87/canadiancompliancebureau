@@ -64,10 +64,7 @@ export function ComplaintForm() {
   return (
     <section className="py-20 bg-white border-b border-warm-200" id="complaint">
       <div className="max-w-[1200px] mx-auto px-6">
-        <p className="text-[11px] font-semibold uppercase tracking-widest text-navy-500 mb-3">
-          File a Complaint
-        </p>
-        <h2 className="font-serif text-[34px] font-bold text-navy-900 leading-tight tracking-tight mb-4">
+        <h2 className="font-serif text-[34px] font-bold text-navy-900 leading-tight tracking-tight mb-3">
           Report Unfair Auction Practices
         </h2>
         <p className="text-base text-warm-500 leading-relaxed max-w-[600px]">

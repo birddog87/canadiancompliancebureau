@@ -30,15 +30,12 @@ export function Services() {
       id="services"
     >
       <div className="max-w-[1200px] mx-auto px-6">
-        <p className="text-[11px] font-semibold uppercase tracking-widest text-navy-500 mb-3">
-          Our Work
-        </p>
-        <h2 className="font-serif text-[34px] font-bold text-navy-900 leading-tight tracking-tight mb-4">
+        <h2 className="font-serif text-[34px] font-bold text-navy-900 leading-tight tracking-tight mb-3">
           Compliance Monitoring &amp; Enforcement
         </h2>
         <p className="text-base text-warm-500 leading-relaxed max-w-[600px] mb-12">
-          We employ a range of investigative and compliance tools to protect the
-          interests of Canadian auction participants.
+          Investigative and compliance tools to protect
+          Canadian auction participants.
         </p>
 
         {/* Primary services — larger, more prominent */}
