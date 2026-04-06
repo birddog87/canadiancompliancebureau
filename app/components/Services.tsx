@@ -36,26 +36,53 @@ export function Services() {
         <h2 className="font-serif text-[34px] font-bold text-navy-900 leading-tight tracking-tight mb-4">
           Compliance Monitoring &amp; Enforcement
         </h2>
-        <p className="text-base text-warm-500 leading-relaxed max-w-[600px]">
+        <p className="text-base text-warm-500 leading-relaxed max-w-[600px] mb-12">
           We employ a range of investigative and compliance tools to protect the
           interests of Canadian auction participants.
         </p>
 
-        <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-5 mt-12">
-          {services.map((s, i) => (
+        {/* Primary services — larger, more prominent */}
+        <div className="grid md:grid-cols-2 gap-5 mb-5">
+          {services.slice(0, 2).map((s, i) => (
             <div
               key={i}
-              className="bg-white border border-warm-200 rounded-[10px] p-7 transition-all duration-200 hover:border-navy-200 hover:shadow-[0_4px_16px_rgba(12,26,46,0.06)] hover:-translate-y-0.5"
+              className="bg-white border border-warm-200 rounded-[10px] p-8 transition-all duration-200 hover:border-navy-200 hover:shadow-[0_4px_16px_rgba(12,26,46,0.06)]"
             >
-              <div className="w-11 h-11 bg-navy-50 border border-navy-100 rounded-[10px] flex items-center justify-center mb-4.5 text-navy-600">
-                <s.icon className="w-[22px] h-[22px]" />
+              <div className="flex items-start gap-5">
+                <div className="w-12 h-12 bg-navy-800 rounded-[10px] flex items-center justify-center flex-shrink-0 text-navy-200">
+                  <s.icon className="w-[22px] h-[22px]" />
+                </div>
+                <div>
+                  <h3 className="font-serif text-[19px] font-semibold text-navy-800 mb-2 leading-snug">
+                    {s.title}
+                  </h3>
+                  <p className="text-[14px] text-warm-500 leading-relaxed">
+                    {s.desc}
+                  </p>
+                </div>
               </div>
-              <h3 className="font-serif text-[17px] font-semibold text-navy-800 mb-2.5 leading-snug">
-                {s.title}
-              </h3>
-              <p className="text-[13.5px] text-warm-500 leading-relaxed">
-                {s.desc}
-              </p>
+            </div>
+          ))}
+        </div>
+
+        {/* Supporting services — compact, secondary visual weight */}
+        <div className="grid md:grid-cols-2 gap-5">
+          {services.slice(2).map((s, i) => (
+            <div
+              key={i}
+              className="border border-warm-200 rounded-[10px] px-7 py-5 flex items-center gap-4 transition-all duration-200 hover:border-navy-200 hover:bg-white"
+            >
+              <div className="w-9 h-9 bg-navy-50 border border-navy-100 rounded-lg flex items-center justify-center flex-shrink-0 text-navy-600">
+                <s.icon className="w-[18px] h-[18px]" />
+              </div>
+              <div>
+                <h3 className="font-serif text-[16px] font-semibold text-navy-800 leading-snug">
+                  {s.title}
+                </h3>
+                <p className="text-[13px] text-warm-500 leading-relaxed mt-0.5">
+                  {s.desc}
+                </p>
+              </div>
             </div>
           ))}
         </div>
