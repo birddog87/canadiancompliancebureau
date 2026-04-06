@@ -75,9 +75,18 @@ export default function PrivacyPolicy() {
               Automatically Collected Information
             </h3>
             <p>
-              We do not use cookies or tracking technologies on this website. We do not use
-              Google Analytics or any third-party analytics services. Basic server logs maintained by
-              our hosting provider (Vercel) may record your IP address, browser type, and pages visited.
+              We use Google Analytics 4 to understand how visitors use our website. Google Analytics
+              collects information such as pages visited, time spent on pages, and how you arrived
+              at our site. This service uses cookies (small text files stored on your device) to
+              distinguish between visitors. The cookies used include <code>_ga</code> and{" "}
+              <code>_ga_*</code>, which expire after 2 years and 24 hours respectively.
+            </p>
+            <p>
+              Google Analytics data is aggregated and anonymized. We do not use this data to
+              identify individual visitors. You can opt out of Google Analytics by installing
+              the Google Analytics Opt-out Browser Add-on. Basic server logs maintained by
+              our hosting provider (Vercel) may also record your IP address, browser type,
+              and pages visited.
             </p>
 
             <h2 className="font-serif text-2xl font-bold text-navy-800 mt-10 mb-4">

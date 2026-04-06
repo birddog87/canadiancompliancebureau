@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { Logo } from "./Logo";
 
 const navLinks = [
@@ -15,8 +15,27 @@ const navLinks = [
 export function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
 
+  const closeMobile = useCallback(() => setMobileOpen(false), []);
+
+  useEffect(() => {
+    if (!mobileOpen) return;
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === "Escape") closeMobile();
+    };
+    document.addEventListener("keydown", handleEscape);
+    return () => document.removeEventListener("keydown", handleEscape);
+  }, [mobileOpen, closeMobile]);
+
   return (
     <>
+      {/* Skip Navigation */}
+      <a
+        href="#main-content"
+        className="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[100] focus:bg-navy-800 focus:text-white focus:px-4 focus:py-2 focus:rounded-md focus:text-sm focus:font-semibold"
+      >
+        Skip to main content
+      </a>
+
       {/* Top Bar */}
       <div className="bg-navy-900 text-navy-200 text-xs tracking-wide py-1.5 border-b border-white/[0.08] hidden md:block">
         <div className="max-w-[1200px] mx-auto px-6 flex justify-between items-center">

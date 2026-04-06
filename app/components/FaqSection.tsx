@@ -57,17 +57,24 @@ export function FaqSection() {
             >
               <button
                 onClick={() => setOpenIndex(openIndex === i ? null : i)}
+                aria-expanded={openIndex === i}
+                aria-controls={`faq-answer-${i}`}
                 className="w-full text-left px-5 py-4 flex items-center justify-between gap-4 hover:bg-warm-50 transition-colors"
               >
                 <span className="font-medium text-navy-800 text-[15px]">
                   {faq.question}
                 </span>
-                <span className="text-navy-400 text-lg flex-shrink-0">
+                <span className="text-navy-400 text-lg flex-shrink-0" aria-hidden="true">
                   {openIndex === i ? "−" : "+"}
                 </span>
               </button>
               {openIndex === i && (
-                <div className="px-5 pb-4 text-warm-600 text-[14.5px] leading-relaxed border-t border-warm-100 pt-3">
+                <div
+                  id={`faq-answer-${i}`}
+                  role="region"
+                  aria-labelledby={`faq-question-${i}`}
+                  className="px-5 pb-4 text-warm-600 text-[14.5px] leading-relaxed border-t border-warm-100 pt-3"
+                >
                   {faq.answer}
                 </div>
               )}

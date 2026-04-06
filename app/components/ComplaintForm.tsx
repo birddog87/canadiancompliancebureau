@@ -148,10 +148,11 @@ export function ComplaintForm() {
             <form onSubmit={handleSubmit} className="space-y-4">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="flex flex-col gap-1.5">
-                  <label className="text-[12.5px] font-semibold text-warm-600 tracking-wide">
+                  <label htmlFor="complaint-name" className="text-[12.5px] font-semibold text-warm-600 tracking-wide">
                     Full Name <span className="text-red-500">*</span>
                   </label>
                   <input
+                    id="complaint-name"
                     type="text"
                     name="name"
                     required
@@ -160,10 +161,11 @@ export function ComplaintForm() {
                   />
                 </div>
                 <div className="flex flex-col gap-1.5">
-                  <label className="text-[12.5px] font-semibold text-warm-600 tracking-wide">
+                  <label htmlFor="complaint-email" className="text-[12.5px] font-semibold text-warm-600 tracking-wide">
                     Email Address <span className="text-red-500">*</span>
                   </label>
                   <input
+                    id="complaint-email"
                     type="email"
                     name="email"
                     required
@@ -175,10 +177,11 @@ export function ComplaintForm() {
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div className="flex flex-col gap-1.5">
-                  <label className="text-[12.5px] font-semibold text-warm-600 tracking-wide">
+                  <label htmlFor="complaint-phone" className="text-[12.5px] font-semibold text-warm-600 tracking-wide">
                     Phone Number
                   </label>
                   <input
+                    id="complaint-phone"
                     type="tel"
                     name="phone"
                     placeholder="(xxx) xxx-xxxx"
@@ -186,13 +189,14 @@ export function ComplaintForm() {
                   />
                 </div>
                 <div className="flex flex-col gap-1.5">
-                  <label className="text-[12.5px] font-semibold text-warm-600 tracking-wide">
+                  <label htmlFor="complaint-province" className="text-[12.5px] font-semibold text-warm-600 tracking-wide">
                     Province <span className="text-red-500">*</span>
                   </label>
                   <select
+                    id="complaint-province"
                     name="province"
                     required
-                    defaultValue="Ontario"
+                    defaultValue=""
                     className="text-sm text-warm-700 px-3.5 py-2.5 border border-warm-200 rounded-md bg-white outline-none transition-all focus:border-navy-400 focus:ring-[3px] focus:ring-navy-400/10"
                   >
                     <option value="">Select province</option>
@@ -206,11 +210,12 @@ export function ComplaintForm() {
               </div>
 
               <div className="flex flex-col gap-1.5">
-                <label className="text-[12.5px] font-semibold text-warm-600 tracking-wide">
+                <label htmlFor="complaint-auction-house" className="text-[12.5px] font-semibold text-warm-600 tracking-wide">
                   Auction House / Platform Name{" "}
                   <span className="text-red-500">*</span>
                 </label>
                 <input
+                  id="complaint-auction-house"
                   type="text"
                   name="auction_house"
                   required
@@ -220,10 +225,11 @@ export function ComplaintForm() {
               </div>
 
               <div className="flex flex-col gap-1.5">
-                <label className="text-[12.5px] font-semibold text-warm-600 tracking-wide">
+                <label htmlFor="complaint-url" className="text-[12.5px] font-semibold text-warm-600 tracking-wide">
                   Platform URL
                 </label>
                 <input
+                  id="complaint-url"
                   type="url"
                   name="platform_url"
                   placeholder="https://www.example.com"
@@ -232,11 +238,12 @@ export function ComplaintForm() {
               </div>
 
               <div className="flex flex-col gap-1.5">
-                <label className="text-[12.5px] font-semibold text-warm-600 tracking-wide">
+                <label htmlFor="complaint-type" className="text-[12.5px] font-semibold text-warm-600 tracking-wide">
                   Nature of Complaint{" "}
                   <span className="text-red-500">*</span>
                 </label>
                 <select
+                  id="complaint-type"
                   name="complaint_type"
                   required
                   className="text-sm text-warm-700 px-3.5 py-2.5 border border-warm-200 rounded-md bg-white outline-none transition-all focus:border-navy-400 focus:ring-[3px] focus:ring-navy-400/10"
@@ -251,11 +258,12 @@ export function ComplaintForm() {
               </div>
 
               <div className="flex flex-col gap-1.5">
-                <label className="text-[12.5px] font-semibold text-warm-600 tracking-wide">
+                <label htmlFor="complaint-description" className="text-[12.5px] font-semibold text-warm-600 tracking-wide">
                   Description of Complaint{" "}
                   <span className="text-red-500">*</span>
                 </label>
                 <textarea
+                  id="complaint-description"
                   name="description"
                   required
                   rows={4}
@@ -265,10 +273,11 @@ export function ComplaintForm() {
               </div>
 
               <div className="flex flex-col gap-1.5">
-                <label className="text-[12.5px] font-semibold text-warm-600 tracking-wide">
+                <label htmlFor="complaint-evidence" className="text-[12.5px] font-semibold text-warm-600 tracking-wide">
                   Supporting Evidence
                 </label>
                 <textarea
+                  id="complaint-evidence"
                   name="evidence"
                   rows={3}
                   placeholder="Links to relevant auction listings, marketplace profiles, screenshots, or other evidence. You may also email evidence directly to investigations@canadiancompliancebureau.ca"

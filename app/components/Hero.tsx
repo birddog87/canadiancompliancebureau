@@ -12,7 +12,7 @@ const stats = [
 
 export function Hero() {
   return (
-    <section className="relative overflow-hidden bg-gradient-to-br from-navy-900 via-navy-800 to-navy-700 py-[100px] lg:py-[100px] md:py-16">
+    <section id="main-content" className="relative overflow-hidden bg-gradient-to-br from-navy-900 via-navy-800 to-navy-700 py-[100px] lg:py-[100px] md:py-16">
       {/* Background effects */}
       <div className="absolute inset-0 pointer-events-none">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_900px_600px_at_15%_80%,rgba(43,82,130,0.35),transparent),radial-gradient(ellipse_700px_500px_at_85%_20%,rgba(27,50,88,0.4),transparent)]" />
