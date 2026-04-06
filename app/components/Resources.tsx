@@ -68,6 +68,16 @@ export function Resources() {
             </a>
           ))}
         </div>
+
+        <div className="mt-10 text-center">
+          <a
+            href="/resources"
+            className="inline-flex items-center gap-2 text-sm font-semibold text-navy-600 no-underline hover:text-navy-800 transition-colors"
+          >
+            View All 13 Resources
+            <ArrowRight className="w-4 h-4" />
+          </a>
+        </div>
       </div>
     </section>
   );
